@@ -38,6 +38,36 @@ $dark-theme: mat.define-theme((
 ));
 
 
+$light-rose-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$rose-palette,
+  ),
+  typography: (
+    brand-family: 'Comic Sans',
+    bold-weight: 900
+  ),
+  density: (
+    scale: -1
+  )
+));
+
+$dark-rose-theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: mat.$cyan-palette,
+  ),
+  typography: (
+    brand-family: 'Comic Sans',
+    bold-weight: 900
+  ),
+  density: (
+    scale: -1
+  )
+));
+
+
+
 
 * {
   transition: background-color 0.3s, color 0.3s;
@@ -45,6 +75,18 @@ $dark-theme: mat.define-theme((
 .dark-theme{
   @include mat.all-component-themes($dark-theme);
 }
+
+.dark-rose-theme{
+  @include mat.all-component-themes($dark-rose-theme);
+}
+
+
+
 .light-theme{
   @include mat.all-component-themes($light-theme);
 }
+
+.light-rose-theme{
+  @include mat.all-component-themes($light-rose-theme);
+}
+

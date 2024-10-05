@@ -1,14 +1,7 @@
 <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px" style="height: 100vh;">
   <div class="content">
+
     <h1>Inspire Work Project 1: Multi theme app</h1>
-
-    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-      [(ngModel)]="favoriteColor">
-      @for (col of colors; track col) {
-      <mat-radio-button (click)="toggleTheme()" class="example-radio-button" [value]="col">{{col}}</mat-radio-button>
-      }
-    </mat-radio-group>
-
 
 
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
@@ -33,7 +26,32 @@
         </button>
       </div>
 
-    </div>
-  </div>
 
+
+
+    </div>
+
+
+
+
+
+     
+    
+      <h2>Pick your theme</h2>
+      <mat-divider></mat-divider>
+      <mat-radio-group
+        (change)="toggleTheme()"
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        [(ngModel)]="favoriteColor">
+        @for (col of myColors; track col) {
+          <mat-radio-button  class="example-radio-button" 
+          [value]="col.value">{{col.viewValue}}</mat-radio-button>
+        }
+      </mat-radio-group>
+    
+    
+  
+
+  </div>
 </div>
